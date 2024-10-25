@@ -79,4 +79,5 @@ Clone the repository and navigate to the MATLAB files directory.
 Clone the repository and navigate to the Python files directory.
 
 ## Installation
+```bash
 git clone https://github.com/Keeby-Astro/Space-Sciences-and-Astrodynamics.git
