@@ -1,4 +1,4 @@
-# Orbital Mechanics Simulation Toolkit
+# Space-Sciences-and-Astrodynamics
 
 This repository contains MATLAB and Python implementations of several orbital mechanics and astrodynamics functions. The toolkit offers functionality for simulating orbits, computing transformations, performing numerical integrations, and more.
 
