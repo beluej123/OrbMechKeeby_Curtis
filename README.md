@@ -40,25 +40,20 @@ The **Space-Sciences-and-Astrodynamics** Repository provides a set of MATLAB and
 | `Orbital Elements.py`         | Calculates orbital parameters from initial state vectors, such as vector magnitude, radial velocity, and angular momentum. |
 | `Orbit_Simulator.py`          | Simulates orbital motion with transformations between orbital elements and Cartesian coordinates, providing a 3D orbit visualization. |
 
-### MATLAB Code Modules
-| `atan2d_0_360.m` \ `atan2d_0_360.py` |
-#### Purpose
-The `atan2d_0_360` function is a specialized variant of the traditional `atan2` function, designed for scenarios where:
-- Angles need to be normalized to the range [0, 360] instead of the standard [-180, 180].
-- Consistent angle representation is required for astrodynamics, robotics, and other applications.
-- Improved readability and usability of angular calculations are beneficial in workflows.
+### MATLAB and Python Code Modules
+#### `atan2d_0_360.m` \ `atan2d_0_360.py`
 
-#### Test Scripts
-The test scripts included in both MATLAB and Python versions validate the `atan2d_0_360` function across a variety of input cases. These scripts:
-- Test the function with edge cases such as zero and axis-aligned vectors.
-- Evaluate performance on quadrants to ensure correct angle normalization.
-- Demonstrate the function's application in common scenarios.
+- The `atan2d_0_360` function is a specialized variant of the traditional `atan2` function, designed for scenarios where:
+  - Angles need to be normalized to the range [0, 360] instead of the standard [-180, 180].
+  - Consistent angle representation is required for astrodynamics, robotics, and other applications.
+  - Improved readability and usability of angular calculations are beneficial in workflows.
 
-*(Insert a plot here demonstrating angle calculations or results.)*
+- The test scripts included in both MATLAB and Python versions validate the `atan2d_0_360` function across a variety of input cases. These scripts:
+  - Test the function with edge cases such as zero and axis-aligned vectors.
+  - Evaluate performance on quadrants to ensure correct angle normalization.
+  - Demonstrate the function's application in common scenarios.
 
-
-### Python Code Modules
-Python versions of all above modules are also available, with the same functionality, optimized for `NumPy` and `SciPy`.
+![atan2d_0_360_plot.png](https://github.com/Keeby-Astro/Space-Sciences-and-Astrodynamics/blob/main/Plots/atan2d_0_360_plot.png)
 
 ## Usage
 
