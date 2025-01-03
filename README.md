@@ -41,8 +41,6 @@ The **Space-Sciences-and-Astrodynamics** Repository provides a set of MATLAB and
 | `Orbit_Simulator.py`          | Simulates orbital motion with transformations between orbital elements and Cartesian coordinates, providing a 3D orbit visualization. |
 
 ### MATLAB Code Modules
-| File                                 |
-|--------------------------------------|
 | `atan2d_0_360.m` \ `atan2d_0_360.py` |
 #### Purpose
 The `atan2d_0_360` function is a specialized variant of the traditional `atan2` function, designed for scenarios where:
