@@ -33,14 +33,28 @@ The **Space-Sciences-and-Astrodynamics** Repository provides a set of MATLAB and
 ## Files and Modules
 
 ### Course Code Modules
-| File                      | Description |
-|---------------------------|-------------|
-| `Coordinate Transformation.py` | Converts between orbital elements and state vectors for orbital dynamics, calculating angular momentum, eccentricity, inclination, and other essential values. |
-| `Family_of_orbits.py`         | Simulates and visualizes a family of orbits with varying semi-major axis and eccentricity. Also includes an animation function for orbit visualization. |
-| `Orbital Elements.py`         | Calculates orbital parameters from initial state vectors, such as vector magnitude, radial velocity, and angular momentum. |
-| `Orbit_Simulator.py`          | Simulates orbital motion with transformations between orbital elements and Cartesian coordinates, providing a 3D orbit visualization. |
 
 ---
+
+#### `Coordinate Transformation.py` 
+- Converts between orbital elements and state vectors for orbital dynamics, calculating angular momentum, eccentricity, inclination, and other essential values.
+
+---
+
+#### `Family_of_orbits.py` 
+- Simulates and visualizes a family of orbits with varying semi-major axis and eccentricity. Also includes an animation function for orbit visualization.
+
+---
+
+#### `Orbital Elements.py`
+- Calculates orbital parameters from initial state vectors, such as vector magnitude, radial velocity, and angular momentum.
+
+---
+
+#### `Orbit_Simulator.py`
+- Simulates orbital motion with transformations between orbital elements and Cartesian coordinates, providing a 3D orbit visualization.
+
+<br>
 
 ### MATLAB and Python Code Modules
 
