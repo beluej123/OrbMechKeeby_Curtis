@@ -41,7 +41,7 @@ The **Space-Sciences-and-Astrodynamics** Repository provides a set of MATLAB and
 | `Orbit_Simulator.py`          | Simulates orbital motion with transformations between orbital elements and Cartesian coordinates, providing a 3D orbit visualization. |
 
 ### MATLAB and Python Code Modules
-#### `atan2d_0_360.m` \ `atan2d_0_360.py`
+#### `atan2d_0_360.m` | `atan2d_0_360.py`
 
 - The `atan2d_0_360` function is a specialized variant of the traditional `atan2` function, designed for scenarios where:
   - Angles need to be normalized to the range [0, 360] instead of the standard [-180, 180].
@@ -66,3 +66,7 @@ Clone the repository and navigate to the Python files directory.
 ## Installation
 ```bash
 git clone https://github.com/Keeby-Astro/Space-Sciences-and-Astrodynamics.git
+```
+
+## Future Updates
+C++ and Fortran translations are currently in progress. This READme file will constantly be updated as needed.
