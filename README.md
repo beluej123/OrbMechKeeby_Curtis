@@ -34,9 +34,13 @@ The toolkit is designed for educational and research purposes and is a resource 
 ### Python
 - **Python**: Version 3.8 or later.
 - Required packages:
-  - `NumPy`
-  - `SciPy`
-  - `Matplotlib`
+  - `numpy`
+  - `scipy`
+  - `matplotlib`
+- **Python**-translated **MATLAB** functions:
+  - `atmosisa`
+  - `quatinv`
+  - `quatmultiply`
 
 ## Features
 - **Coordinate Transformations**: Convert between orbital elements and state vectors.
