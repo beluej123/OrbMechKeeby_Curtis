@@ -1,34 +1,50 @@
 # Space-Sciences-and-Astrodynamics
 
-This repository contains MATLAB and Python implementations of several orbital mechanics and astrodynamics functions. The toolkit offers functionality for simulating orbits, computing transformations, performing numerical integrations, and more.
+This repository contains MATLAB and Python implementations of orbital mechanics and astrodynamics tools. It provides a comprehensive set of functions for simulating orbital motion, performing numerical methods, analyzing spacecraft trajectories, and modeling celestial mechanics. The repository is based on foundational principles and extends concepts found in *Orbital Mechanics for Engineering Students* by Howard D. Curtis.
 
 ## Table of Contents
 - [Overview](#overview)
 - [Requirements](#requirements)
 - [Features](#features)
-- [Files and Modules](#files-and-modules)
+- [Course Code Modules](#course-code-modules)
+- [MATLAB and Python Code Modules](#matlab-and-python-code-modules)
 - [Usage](#usage)
 - [Installation](#installation)
+- [Future Updates](#future-updates)
 
 ---
 
 ## Overview
-The **Space-Sciences-and-Astrodynamics** Repository provides a set of MATLAB and Python scripts based on Orbital Mechanics for Engineering Students by Howard D. Curtis for modeling and simulating space-based mechanics, including coordinate transformations, orbital element calculations, interplanetary trajectory solutions, and more. The toolkit is designed for educational and research purposes and is a resource for those interested in understanding or working within astrodynamics.
+
+The **Space Sciences and Astrodynamics** repository provides a robust toolkit for modeling, simulating, and analyzing space-based systems. It supports a wide range of functionalities including:
+- Conversion between orbital elements and Cartesian state vectors.
+- Simulation of spacecraft trajectories under gravitational and non-gravitational forces.
+- Calculation of interplanetary trajectories and orbital perturbations.
+- Numerical solutions to astrodynamics equations using advanced algorithms.
+- Visualization of orbits, ground tracks, and other dynamic phenomena.
+
+The toolkit is designed for educational and research purposes and is a resource for those interested in understanding or working within astrodynamics to explore and develop a deeper understanding of orbital mechanics.
 
 ## Requirements
-- **MATLAB** (R2021a or later recommended) OR **Python** 3.8+
-- MATLAB’s `ode45` and other built-in functions
-- Python packages (only if using Python versions of the scripts):
+
+### MATLAB
+- **MATLAB**: Version R2021a or later recommended.
+- Built-in functions such as `ode45` for numerical integration.
+
+### Python
+- **Python**: Version 3.8 or later.
+- Required packages:
   - `NumPy`
   - `SciPy`
   - `Matplotlib`
 
 ## Features
-- **Coordinate Transformation**: Convert between orbital elements and state vectors.
-- **Orbit Simulations**: Simulate different types of orbits, including two-body and three-body systems.
-- **Trajectory Calculation**: Calculate interplanetary and lunar trajectories.
-- **Root Finding & Numerical Methods**: Implement bisection, Runge-Kutta, and Heun's methods for solving differential equations.
-- **Orbital Elements & Ephemerides**: Compute positions of celestial bodies (e.g., Sun, Moon) for a given Julian date.
+- **Coordinate Transformations**: Convert between orbital elements and state vectors.
+- **Orbit Propagation**: Simulate two-body and three-body systems.
+- **Trajectory Analysis**: Compute interplanetary transfers and lunar trajectories.
+- **Numerical Methods**: Implement advanced solvers like Runge-Kutta, Heun’s method, and bisection.
+- **Ephemeris Calculations**: Predict positions of celestial bodies for a given Julian date.
+- **Perturbation Modeling**: Analyze gravitational (e.g., J2 effects) and non-gravitational forces (e.g., solar radiation pressure).
 
 ## Files and Modules
 
@@ -982,15 +998,23 @@ The **Space-Sciences-and-Astrodynamics** Repository provides a set of MATLAB and
 ## Usage
 
 ### MATLAB
-Clone the repository and navigate to the MATLAB files directory.
+Clone the repository and navigate to the MATLAB files directory. Navigate to the MATLAB files and execute scripts as needed.
 
 ### Python
-Clone the repository and navigate to the Python files directory.
+Clone the repository and navigate to the Python files directory. Install the required Python packages and run scripts directly.
 
 ## Installation
+
+Clone the repository:
 ```bash
 git clone https://github.com/Keeby-Astro/Space-Sciences-and-Astrodynamics.git
 ```
 
+---
+
 ## Future Updates
-C++ and Fortran translations are currently in progress. This READme file will constantly be updated as needed.
+Actively working on extending functionality to other programming languages, including:
+- **C++**: Faster and more efficient computations for high-performance applications.
+- **Fortran**: Integration with legacy systems and specialized scientific computations.
+
+Additionally, ongoing improvements will be made to enhance existing modules, improve usability, and incorporate new features as needed.
