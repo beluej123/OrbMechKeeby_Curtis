@@ -7,7 +7,7 @@ This repository contains MATLAB, Python and C++ implementations of orbital mecha
 - [Requirements](#requirements)
 - [Features](#features)
 - [Course Code Modules](#course-code-modules)
-- [MATLAB Python and C++ Code Modules](https://github.com/Keeby-Astro/Space-Sciences-and-Astrodynamics/edit/main/README.md#matlab-python-and-c++-code-modules)
+- [MATLAB Python and C++ Code Modules](#matlab-python-and-c++-code-modules)
 - [Usage](#usage)
 - [Installation](#installation)
 - [Future Updates](#future-updates)
