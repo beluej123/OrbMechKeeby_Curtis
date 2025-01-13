@@ -77,7 +77,7 @@ The toolkit is designed for educational and research purposes and is a resource 
 
 <br>
 
-### MATLAB and Python Code Modules
+### MATLAB, Python, and C++ Code Modules
 
 ---
 
