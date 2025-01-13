@@ -1,13 +1,13 @@
 # Space-Sciences-and-Astrodynamics
 
-This repository contains MATLAB and Python implementations of orbital mechanics and astrodynamics tools. It provides a comprehensive set of functions for simulating orbital motion, performing numerical methods, analyzing spacecraft trajectories, and modeling celestial mechanics. The repository is based on foundational principles and extends concepts found in *Orbital Mechanics for Engineering Students* by Howard D. Curtis.
+This repository contains MATLAB, Python and C++ implementations of orbital mechanics and astrodynamics tools. It provides a comprehensive set of functions for simulating orbital motion, performing numerical methods, analyzing spacecraft trajectories, and modeling celestial mechanics. The repository is based on foundational principles and extends concepts found in *Orbital Mechanics for Engineering Students* by Howard D. Curtis.
 
 ## Table of Contents
 - [Overview](#overview)
 - [Requirements](#requirements)
 - [Features](#features)
 - [Course Code Modules](#course-code-modules)
-- [MATLAB, Python, and C++ Code Modules](#matlab-python-and-c++-code-modules)
+- [MATLAB Python and C++ Code Modules](https://github.com/Keeby-Astro/Space-Sciences-and-Astrodynamics/edit/main/README.md#matlab-python-and-c++-code-modules)
 - [Usage](#usage)
 - [Installation](#installation)
 - [Future Updates](#future-updates)
@@ -33,7 +33,7 @@ The toolkit is designed for educational and research purposes and is a resource 
 - `rsmooth.m` for proper functionality of dependent scripts.
 
 ### Python
-- **Python**: Version 3.8 or later.
+- **Python**: Version 3.8 or later recommended
 - Required packages:
   - `numpy`
   - `scipy`
@@ -42,6 +42,14 @@ The toolkit is designed for educational and research purposes and is a resource 
   - `atmosisa`
   - `quatinv`
   - `quatmultiply`
+ 
+### C++
+- **C++**: Version 23 or later recommended.
+- **C++**-translated **MATLAB** functions:
+  - `atmosisa`
+  - `quatinv`
+  - `quatmultiply`
+  - `rsmooth`
 
 ## Features
 - **Coordinate Transformations**: Convert between orbital elements and state vectors.
@@ -77,7 +85,7 @@ The toolkit is designed for educational and research purposes and is a resource 
 
 <br>
 
-### MATLAB, Python, and C++ Code Modules
+### MATLAB Python and C++ Code Modules
 
 ---
 
@@ -1022,7 +1030,7 @@ git clone https://github.com/Keeby-Astro/Space-Sciences-and-Astrodynamics.git
 
 ## Future Updates
 Actively working on extending functionality to other programming languages, including:
-- **C++**: Faster and more efficient computations for high-performance applications.
 - **Fortran**: Integration with legacy systems and specialized scientific computations.
+- **Plot Scripts**: Will add the Python Plot Scripts in the near future for replicating/modifying plots displayed in README.
 
 Additionally, ongoing improvements will be made to enhance existing modules, improve usability, and incorporate new features as needed.
