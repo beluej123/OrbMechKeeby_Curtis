@@ -7,7 +7,7 @@ This repository contains MATLAB and Python implementations of orbital mechanics 
 - [Requirements](#requirements)
 - [Features](#features)
 - [Course Code Modules](#course-code-modules)
-- [MATLAB and Python Code Modules](#matlab-and-python-code-modules)
+- [MATLAB, Python, and C++ Code Modules](#matlab-python-and-c++-code-modules)
 - [Usage](#usage)
 - [Installation](#installation)
 - [Future Updates](#future-updates)
