@@ -1,9 +1,12 @@
-# ALGORITHM 2.1: NUMERICAL SOLUTION OF THE TWO-BODY PROBLEM
-# RELATIVE TO AN INERTIAL FRAME
+"""
+ALGORITHM 2.1: NUMERICAL SOLUTION OF THE TWO-BODY PROBLEM
+RELATIVE TO AN INERTIAL FRAME
+"""
 
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 import rkf45
+
 
 def twobody3d():
     '''
@@ -15,13 +18,13 @@ def twobody3d():
     m               - the total mass (kg)
     t0              - initial time (s)
     tf              - final time (s)
-    R1_0,V1_0       - 3 by 1 column vectors containing the components of tbe
+    r1_0,v1_0       - 3 by 1 column vectors containing the components of tbe
                       initial position (km) and velocity (km/s) of m1
-    R2_0,V2_0       - 3 by 1 column vectors containing the components of the
+    r2_0,v2_0       - 3 by 1 column vectors containing the components of the
                       initial position (km) and velocity (km/s) of m2
     y0              - 12 by 1 column vector containing the initial values
                       of the state vectors of the two bodies:
-                      [R1_0; R2_0; V1_0; V2_0]
+                      [r1_0; r2_0; v1_0; v2_0]
     t               - column vector of the times at which the solution is found
     X1,Y1,Z1        - column vectors containing the X,Y and Z coordinates (km)
                       of m1 at the times in t
@@ -45,14 +48,14 @@ def twobody3d():
     t0 = 0
     tf = 480
 
-    R1_0 = np.array([0, 0, 0])
-    R2_0 = np.array([3000, 0, 0])
+    r1_0 = np.array([0, 0, 0])
+    r2_0 = np.array([3000, 0, 0])
 
-    V1_0 = np.array([10, 20, 30])
-    V2_0 = np.array([0, 40, 0])
+    v1_0 = np.array([10, 20, 30])
+    v2_0 = np.array([0, 40, 0])
     #...End input data
 
-    y0 = np.hstack((R1_0, R2_0, V1_0, V2_0))
+    y0 = np.hstack((r1_0, r2_0, v1_0, v2_0))
 
     #...Integrate the equations of motion
     t, y = rkf45.rkf45(rates, [t0, tf], y0)
@@ -156,4 +159,5 @@ def common_axis_settings():
     ax.set_zlabel('Z (km)')
 
 if __name__ == '__main__':
+    twobody3d()
     twobody3d()

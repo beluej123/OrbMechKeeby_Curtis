@@ -1,5 +1,9 @@
-import numpy as np
+"""
+ALGORITHM description placeholder
+"""
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 def threebody():
     '''
@@ -117,7 +121,7 @@ def rates(t, y, G, m1, m2, m3):
     return [VX1, VY1, VX2, VY2, VX3, VY3, AX1, AY1, AX2, AY2, AX3, AY3]
 
 def plotit(X1, Y1, X2, Y2, X3, Y3, XG, YG, X1G, Y1G, X2G, Y2G, X3G, Y3G):
-    #...Plot the motions relative to the inertial frame:
+    """...Plot the motions relative to the inertial frame:"""
     plt.figure(1)
     plt.title('Figure 2.4: Motion relative to the inertial frame', fontweight='bold', fontsize=12)
     plt.plot(XG, YG, '--k', linewidth=0.25)
