@@ -1,11 +1,15 @@
-"""Interplanetary test description goes here"""
+"""
+Interplanetary test description goes here
+    2025-04-16. Python importing remains an issue for me to figure out!
+        For now, ignore the import errors below.
+"""
 
 import os
 import sys
 
 import numpy as np
 
-# set import path to Python_Scripts; this import scheme works for me for now...
+# Set import path to Python_Scripts; this import scheme works for me for now...
 #   I cannot figure out the python import to get modules from another directory
 cwd = os.getcwd()
 print(f"current dir:\n{cwd}")
@@ -125,7 +129,7 @@ def interplanetary_test():
     vinf1 = np.array(V1) - np.array(Vp1)
     vinf2 = np.array(V2) - np.array(Vp2)
 
-    # Departure details
+    # Departure details; month=not used
     month, planet = month_planet_names(depart[2], depart[0])
     print("-----------------------------------------------------")
     print(" Departure:")
@@ -144,9 +148,9 @@ def interplanetary_test():
     # Time of flight
     print(f"\n Time of flight = {tof:.3f} days")
 
-    # Arrival details
+    # Arrival details; month=not used
     month, planet = month_planet_names(arrive[2], arrive[0])
-    print("\n Arrival:")
+    print("\nArrival:")
     print(f"   Planet: {planet}")
     print(f"   Date      : {arrive[1]}-{arrive[2]}-{arrive[3]} {arrive[4]}:{arrive[5]}:{arrive[6]}")
     print(f"   Julian day: {jd2:.3f}")
@@ -160,7 +164,7 @@ def interplanetary_test():
     print(f"     Magnitude                   = {np.linalg.norm(vinf2):.3f}")
 
     # Orbital elements
-    print("\n Orbital elements of flight trajectory:")
+    print("\nOrbital elements of flight trajectory:")
     print(f"  Angular momentum (km^2/s)                   = {coe_depart[0]:.3e}")
     print(f"  Eccentricity                                = {coe_depart[1]:.6f}")
     print(f"  Right ascension of the ascending node (deg) = {coe_depart[2] / deg:.3f}")
@@ -179,20 +183,10 @@ def interplanetary_test():
 
 # Call the function
 def main():
-    """Executes modules..."""
+    """Execute module..."""
     interplanetary_test()
 
 
-# if __name__ == "__main__" and __package__ is None:
-if __name__ == "__main__":
-    # very ugly! but tries to solve relative import issue 4 me
-    # import os
-    # from pathlib import Path
-    # current_directory = os.getcwd()
-    # print(f"Current working directory: {current_directory}")
-    # # Change the current working directory
-    # new_directory = Path(r"C:\Users\belue\Documents\!Data\Python\01-Astro\OrbMechKeeby_Curtis")
-    # os.chdir(new_directory)
-
-    # from . import coe_from_sv, interplanetary, month_planet_names
+if __name__ == "__main__" and __package__ is None:
+    # 2025-04-16, python importing is very ugly for me!
     main()

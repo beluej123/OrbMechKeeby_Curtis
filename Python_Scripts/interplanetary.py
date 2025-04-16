@@ -64,7 +64,7 @@ def interplanetary(depart, arrive, mu):
     minute = depart[5]
     second = depart[6]
 
-    # Use Algorithm 8.1 to obtain planet 1's state vector
+    # Algorithm 8.1 for planet 1's state vector
     # (don’t need its orbital elements ["dum"])
     dum, Rp1, Vp1, jd1 = planet_elements_and_sv(
         planet_id, year, month, day, hour, minute, second

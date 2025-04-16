@@ -1,7 +1,7 @@
 """Lambert"""
 import numpy as np
-import stumpC
-import stumpS
+from stumpC import stumpC
+from stumpS import stumpS
 
 
 def lambert(R1, R2, t, orbit_type, mu):
@@ -59,11 +59,11 @@ def lambert(R1, R2, t, orbit_type, mu):
     #...Stumpff functions:
     def C(z):
         '''Stumpff C function.'''
-        return stumpC.stumpC(z)
+        return stumpC(z)
 
     def S(z):
         '''Stumpff S function.'''
-        return stumpS.stumpS(z)
+        return stumpS(z)
 
     # Equation 5.38
     def y(z):
