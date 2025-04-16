@@ -1,8 +1,13 @@
-# ALGORITHM 8.2: CALCULATION OF THE SPACECRAFT TRAJECTORY
-# FROM PLANET 1 TO PLANET 2
+"""
+ALGORITHM 8.2: CALCULATION OF THE SPACECRAFT TRAJECTORY
+    FROM PLANET 1 TO PLANET 2
+"""
 
-import planet_elements_and_sv
-import lambert
+from lambert import lambert
+from planet_elements_and_sv import planet_elements_and_sv
+
+# from Python_Scripts import lambert, planet_elements_and_sv
+
 
 def interplanetary(depart, arrive, mu):
     '''
@@ -61,7 +66,7 @@ def interplanetary(depart, arrive, mu):
 
     # Use Algorithm 8.1 to obtain planet 1's state vector
     # (don’t need its orbital elements ["dum"])
-    dum, Rp1, Vp1, jd1 = planet_elements_and_sv.planet_elements_and_sv(
+    dum, Rp1, Vp1, jd1 = planet_elements_and_sv(
         planet_id, year, month, day, hour, minute, second
     )
 
@@ -75,7 +80,7 @@ def interplanetary(depart, arrive, mu):
     second = arrive[6]
 
     # Likewise use Algorithm 8.1 to obtain planet 2's state vector
-    dum, Rp2, Vp2, jd2 = planet_elements_and_sv.planet_elements_and_sv(
+    dum, Rp2, Vp2, jd2 = planet_elements_and_sv(
         planet_id, year, month, day, hour, minute, second
     )
 
@@ -87,7 +92,7 @@ def interplanetary(depart, arrive, mu):
 
     # Use Algorithm 5.2 to find the spacecraft's velocity at
     # departure and arrival, assuming a prograde trajectory
-    V1, V2 = lambert.lambert(R1, R2, tof, 'pro', mu)
+    V1, V2 = lambert(R1, R2, tof, 'pro', mu)
 
     # Output as structured data
     planet1 = (Rp1, Vp1, jd1)

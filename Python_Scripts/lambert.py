@@ -1,6 +1,8 @@
+"""Lambert"""
 import numpy as np
 import stumpC
 import stumpS
+
 
 def lambert(R1, R2, t, orbit_type, mu):
     '''

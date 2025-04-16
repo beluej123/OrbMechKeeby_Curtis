@@ -1,10 +1,12 @@
-# ALGORITHM 8.1: CALCULATION OF THE HELIOCENTRIC STATE
-# VECTOR OF A PLANET AT A GIVEN EPOCH
-
-import numpy as np
+"""
+ALGORITHM 8.1: CALCULATION OF THE HELIOCENTRIC STATE
+    VECTOR OF A PLANET AT A GIVEN EPOCH
+"""
 import J0
 import kepler_E
+import numpy as np
 import sv_from_coe
+
 
 def planet_elements_and_sv(planet_id, year, month, day, hour, minute, second):
     '''
@@ -194,4 +196,5 @@ def zero_to_360(x):
     '''
     if x >= 360 or x < 0:
         x = x % 360
+    return x
     return x

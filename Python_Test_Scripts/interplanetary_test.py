@@ -1,11 +1,21 @@
 """Interplanetary test description goes here"""
+
+import os
+import sys
+
 import numpy as np
 
-from Python_Scripts import coe_from_sv, interplanetary, month_planet_names
+# set import path to Python_Scripts; this import scheme works for me for now...
+#   I cannot figure out the python import to get modules from another directory
+cwd = os.getcwd()
+print(f"current dir:\n{cwd}")
+module_dir = os.path.join(cwd, "Python_Scripts")  # places correct dir seperator
+print(f"Set module dir:\n{module_dir}")
+sys.path.insert(0, module_dir)
 
-# from Python_Scripts import coe_from_sv
-# from Python_Scripts import interplanetary
-# from Python_Scripts import month_planet_names
+from coe_from_sv import coe_from_sv
+from interplanetary import interplanetary
+from month_planet_names import month_planet_names
 
 
 def interplanetary_test():
@@ -116,52 +126,42 @@ def interplanetary_test():
     vinf2 = np.array(V2) - np.array(Vp2)
 
     # Departure details
-    print("-----------------------------------------------------")
     month, planet = month_planet_names(depart[2], depart[0])
-    print("\n\n Departure:")
-    print(f"\n   Planet: {planet}")
-    print(f"   Year  : {depart[1]}")
-    print(f"   Month : {month}")
-    print(f"   Day   : {depart[3]}")
-    print(f"   Hour  : {depart[4]}")
-    print(f"   Minute: {depart[5]}")
-    print(f"   Second: {depart[6]}")
-    print(f"\n\n   Julian day: {jd1:.3f}")
-    print(f"\n   Planet position vector (km)    = {Rp1}")
-    print(f"   Magnitude                      = {np.linalg.norm(Rp1):.3f}")
-    print(f"\n   Planet velocity (km/s)         = {Vp1}")
-    print(f"   Magnitude                      = {np.linalg.norm(Vp1):.3f}")
-    print(f"\n   Spacecraft velocity (km/s)     = {V1}")
-    print(f"   Magnitude                      = {np.linalg.norm(V1):.3f}")
-    print(f"\n   v-infinity at departure (km/s) = {vinf1}")
-    print(f"   Magnitude                      = {np.linalg.norm(vinf1):.3f}")
+    print("-----------------------------------------------------")
+    print(" Departure:")
+    print(f"   Planet: {planet}")
+    print(f"   Date      : {depart[1]}-{depart[2]}-{depart[3]} {depart[4]}:{depart[5]}:{depart[6]}")
+    print(f"   Julian day: {jd1:.3f}")
+    print(f"   Planet position vector (km) = {Rp1}")
+    print(f"     Magnitude                 = {np.linalg.norm(Rp1):.3f}")
+    print(f"   Planet velocity (km/s)      = {Vp1}")
+    print(f"     Magnitude                 = {np.linalg.norm(Vp1):.3f}")
+    print(f"   Spacecraft velocity (km/s)  = {V1}")
+    print(f"     Magnitude                 = {np.linalg.norm(V1):.3f}")
+    print(f"   v-infinity at departure (km/s) = {vinf1}")
+    print(f"     Magnitude                    = {np.linalg.norm(vinf1):.3f}")
 
     # Time of flight
-    print(f"\n\n Time of flight = {tof:.3f} days")
+    print(f"\n Time of flight = {tof:.3f} days")
 
     # Arrival details
     month, planet = month_planet_names(arrive[2], arrive[0])
-    print("\n\n Arrival:")
-    print(f"\n   Planet: {planet}")
-    print(f"   Year  : {arrive[1]}")
-    print(f"   Month : {month}")
-    print(f"   Day   : {arrive[3]}")
-    print(f"   Hour  : {arrive[4]}")
-    print(f"   Minute: {arrive[5]}")
-    print(f"   Second: {arrive[6]}")
-    print(f"\n\n   Julian day: {jd2:.3f}")
-    print(f"\n   Planet position vector (km)   = {Rp2}")
-    print(f"   Magnitude                     = {np.linalg.norm(Rp2):.3f}")
-    print(f"\n   Planet velocity (km/s)        = {Vp2}")
-    print(f"   Magnitude                     = {np.linalg.norm(Vp2):.3f}")
-    print(f"\n   Spacecraft Velocity (km/s)    = {V2}")
-    print(f"   Magnitude                     = {np.linalg.norm(V2):.3f}")
-    print(f"\n   v-infinity at arrival (km/s)  = {vinf2}")
-    print(f"   Magnitude                     = {np.linalg.norm(vinf2):.3f}")
+    print("\n Arrival:")
+    print(f"   Planet: {planet}")
+    print(f"   Date      : {arrive[1]}-{arrive[2]}-{arrive[3]} {arrive[4]}:{arrive[5]}:{arrive[6]}")
+    print(f"   Julian day: {jd2:.3f}")
+    print(f"   Planet position vector (km) = {Rp2}")
+    print(f"     Magnitude                 = {np.linalg.norm(Rp2):.3f}")
+    print(f"   Planet velocity (km/s)      = {Vp2}")
+    print(f"     Magnitude                 = {np.linalg.norm(Vp2):.3f}")
+    print(f"   Spacecraft Velocity (km/s)  = {V2}")
+    print(f"     Magnitude                 = {np.linalg.norm(V2):.3f}")
+    print(f"   v-infinity at arrival (km/s)  = {vinf2}")
+    print(f"     Magnitude                   = {np.linalg.norm(vinf2):.3f}")
 
     # Orbital elements
-    print("\n\n\n Orbital elements of flight trajectory:")
-    print(f"\n  Angular momentum (km^2/s)                   = {coe_depart[0]:.3e}")
+    print("\n Orbital elements of flight trajectory:")
+    print(f"  Angular momentum (km^2/s)                   = {coe_depart[0]:.3e}")
     print(f"  Eccentricity                                = {coe_depart[1]:.6f}")
     print(f"  Right ascension of the ascending node (deg) = {coe_depart[2] / deg:.3f}")
     print(f"  Inclination to the ecliptic (deg)           = {coe_depart[3] / deg:.3f}")
@@ -180,11 +180,19 @@ def interplanetary_test():
 # Call the function
 def main():
     """Executes modules..."""
-    # interplanetary_test()
+    interplanetary_test()
 
 
-if __name__ == "__main__" and __package__ is None:
-    # root = pathlib.Path(__main__.__file__).parent
-    # __main__.__package__ = root.name
-    # print(f"root.name {root}")
+# if __name__ == "__main__" and __package__ is None:
+if __name__ == "__main__":
+    # very ugly! but tries to solve relative import issue 4 me
+    # import os
+    # from pathlib import Path
+    # current_directory = os.getcwd()
+    # print(f"Current working directory: {current_directory}")
+    # # Change the current working directory
+    # new_directory = Path(r"C:\Users\belue\Documents\!Data\Python\01-Astro\OrbMechKeeby_Curtis")
+    # os.chdir(new_directory)
+
+    # from . import coe_from_sv, interplanetary, month_planet_names
     main()

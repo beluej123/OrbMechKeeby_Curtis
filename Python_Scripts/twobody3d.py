@@ -5,7 +5,8 @@ RELATIVE TO AN INERTIAL FRAME
 
 import matplotlib.pyplot as plt
 import numpy as np
-import rkf45
+
+# from rkf45 import rkf45 # some day fix the import issue related to __main__
 
 
 def twobody3d():
@@ -58,7 +59,7 @@ def twobody3d():
     y0 = np.hstack((r1_0, r2_0, v1_0, v2_0))
 
     #...Integrate the equations of motion
-    t, y = rkf45.rkf45(rates, [t0, tf], y0)
+    t, y = rkf45(rates, [t0, tf], y0)
 
     #...Output the results
     output(t, y, m1, m2)
@@ -159,4 +160,8 @@ def common_axis_settings():
     ax.set_zlabel('Z (km)')
 
 if __name__ == '__main__':
+    # very ugly! but solves relative import issue 4 me
+    from rkf45 import rkf45
     twobody3d()
+else:
+    from .rkf45 import rkf45

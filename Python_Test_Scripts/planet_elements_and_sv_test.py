@@ -1,6 +1,7 @@
 import numpy as np
-import planet_elements_and_sv
-import month_planet_names
+
+from Python_Scripts import month_planet_names, planet_elements_and_sv
+
 
 def compute_planet_elements_and_sv():
     '''
