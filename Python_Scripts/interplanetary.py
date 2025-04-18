@@ -1,6 +1,8 @@
 """
-ALGORITHM 8.2: CALCULATION OF THE SPACECRAFT TRAJECTORY
-    FROM PLANET 1 TO PLANET 2
+ALGORITHM 8.2: spacecraft trajectory, planet 1 -> planet 2
+    Curtis 3rd. ed. p393
+2025-04-16. Python importing remains an issue for me to figure out!
+    For now, ignore the linting import errors below.
 """
 
 from lambert import lambert
@@ -11,7 +13,7 @@ from planet_elements_and_sv import planet_elements_and_sv
 
 def interplanetary(depart, arrive, mu):
     '''
-    This function determines the spacecraft trajectory from the sphere
+    Determine spacecraft trajectory from the sphere
     of influence of planet 1 to that of planet 2 using Algorithm 8.2
 
     mu          - gravitational parameter of the sun (km^3/s^2)

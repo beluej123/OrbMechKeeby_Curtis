@@ -1,6 +1,6 @@
 """Lambert"""
 import numpy as np
-from stumpC import stumpC
+from stumpC import stumpC  # unclear why the pylint calls this an error
 from stumpS import stumpS
 
 
@@ -89,7 +89,6 @@ def lambert(R1, R2, t, orbit_type, mu):
             3.0 * (S(z) / C(z)) * np.sqrt(y(z))
             + A * np.sqrt(C(z) / y(z))
         )
-
         return term1 + term2
 
     #...Determine approximately where F(z,t) changes sign, and

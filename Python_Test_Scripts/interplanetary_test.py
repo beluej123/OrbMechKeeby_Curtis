@@ -2,6 +2,7 @@
 Interplanetary test description goes here
     2025-04-16. Python importing remains an issue for me to figure out!
         For now, ignore the import errors below.
+Curtis 3rd. ed. pp.393, example 8.8
 """
 
 import os
@@ -10,7 +11,8 @@ import sys
 import numpy as np
 
 # Set import path to Python_Scripts; this import scheme works for me for now...
-#   I cannot figure out the python import to get modules from another directory
+#   I cannot figure out the python import to get modules from another directory,
+#       that also import modules from that other directory.
 cwd = os.getcwd()
 print(f"current dir:\n{cwd}")
 module_dir = os.path.join(cwd, "Python_Scripts")  # places correct dir seperator
@@ -188,5 +190,6 @@ def main():
 
 
 if __name__ == "__main__" and __package__ is None:
-    # 2025-04-16, python importing is very ugly for me!
+    # 2025-04-16, python importing is very ugly!
+    main()
     main()

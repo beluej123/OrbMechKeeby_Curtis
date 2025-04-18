@@ -1,14 +1,18 @@
-import numpy as np
-import timeit
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-from scipy.integrate import solve_ivp
-import os
+"""
+Orbit Simulator description.
+2025-04-16.  My gues is this is a work in progress.
+"""
 import csv
+import os
+import timeit
+
+import matplotlib.pyplot as plt
+import numpy as np
 
 # Functions with orbital elements <-> state vector conversion
-from functions import orb2xyz
-from functions import xyz2orb
+from functions import orb2xyz, xyz2orb
+from mpl_toolkits.mplot3d import Axes3D
+from scipy.integrate import solve_ivp
 
 # Constants
 mu = 398600.4418  # km^3/s^2
@@ -24,7 +28,9 @@ theta = np.deg2rad(0.0)  # True anomaly (rad)
 
 print("\n--------------### Spacecraft's initial conditions ###----------------")
 print(f"a = {a:.5e} km       e = {e:.5e}      i = {np.rad2deg(i):.3f} deg")
-print(f"w = {np.rad2deg(w):.2f} deg            OM = {np.rad2deg(OM):.2f} deg     theta = {np.rad2deg(theta):.2f} deg\n")
+print(
+    f"w = {np.rad2deg(w):.2f} deg            OM = {np.rad2deg(OM):.2f} deg     theta = {np.rad2deg(theta):.2f} deg\n"
+)
 
 # Store the orbital elements in a list
 oe = [a, e, i, w, OM, theta]
@@ -70,9 +76,9 @@ def Derivs(t, f):
     dydt = x_sat[4]
     dzdt = x_sat[5]
 
-    ddxdt = - GM * x_sat[0] / r ** 3
-    ddydt = - GM * x_sat[1] / r ** 3
-    ddzdt = - GM * x_sat[2] / r ** 3
+    ddxdt = -GM * x_sat[0] / r**3
+    ddydt = -GM * x_sat[1] / r**3
+    ddzdt = -GM * x_sat[2] / r**3
 
     return [dxdt, dydt, dzdt, ddxdt, ddydt, ddzdt]
 
@@ -87,10 +93,18 @@ nt = int(tf / dt)  # number of steps
 tspan = np.arange(0.0, tf + dt, dt)
 
 start = timeit.default_timer()
-print('\nRunning...\n')
+print("\nRunning...\n")
 
-solution = solve_ivp(Derivs, [0.0, tf + dt], initial_state, events=[event1], method='DOP853', \
-                     t_eval=tspan, rtol=1e-8, atol=1e-8)
+solution = solve_ivp(
+    Derivs,
+    [0.0, tf + dt],
+    initial_state,
+    events=[event1],
+    method="DOP853",
+    t_eval=tspan,
+    rtol=1e-8,
+    atol=1e-8,
+)
 
 
 state = solution.y
@@ -155,11 +169,18 @@ for i in range(0, len(times)):
             print(file_name_2, "already exists. Overwriting.")
             os.remove(file_name_2)
     # Write time and orbital elements in a CSV file
-    with open(file_name_2, 'a') as csvfile:
+    with open(file_name_2, "a") as csvfile:
         csvwriter = csv.writer(csvfile)
         if i == 0:
-            header = ['Time (sec)', 'a (km)', 'e', 'i', 'w (deg)', \
-                      'OM (deg)', 'theta (deg)']
+            header = [
+                "Time (sec)",
+                "a (km)",
+                "e",
+                "i",
+                "w (deg)",
+                "OM (deg)",
+                "theta (deg)",
+            ]
             csvwriter.writerow(header)
         # Adding time in the first column
         aux = [times[i]] + set
@@ -170,16 +191,16 @@ orbit = np.array(orb)
 
 # Creating a 3D plot
 fig = plt.figure(figsize=(8, 6))
-ax = fig.add_subplot(111, projection='3d')
+ax = fig.add_subplot(111, projection="3d")
 
 # Plotting the orbit
-ax.plot(x, y, z, label='Spacecraft Orbit')
+ax.plot(x, y, z, label="Spacecraft Orbit")
 
 # Setting labels and title
-ax.set_xlabel('X Position (km)')
-ax.set_ylabel('Y Position (km)')
-ax.set_zlabel('Z Position (km)')
-ax.set_title('3D Plot of Spacecraft Orbit')
+ax.set_xlabel("X Position (km)")
+ax.set_ylabel("Y Position (km)")
+ax.set_zlabel("Z Position (km)")
+ax.set_title("3D Plot of Spacecraft Orbit")
 
 # Setting the axes limits (adjust these based on your data range)
 ax.set_xlim([min(x), max(x)])
