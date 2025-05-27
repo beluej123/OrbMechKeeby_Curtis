@@ -1028,7 +1028,7 @@ Space-Sciences-and-Astrodynamics/
 
 ![twobody3d_plot2.png](https://github.com/Keeby-Astro/Space-Sciences-and-Astrodynamics/blob/main/plots/twobody3d_plot2.png)
 
-![twobody3d_plo3t.png](https://github.com/Keeby-Astro/Space-Sciences-and-Astrodynamics/blob/main/Plots/twobody3d_plot3.png)
+![twobody3d_plo3t.png](https://github.com/Keeby-Astro/Space-Sciences-and-Astrodynamics/blob/main/plots/twobody3d_plot3.png)
 
 ---
 
